@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Rating Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,600" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6dd5fa, #2980b9);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .rating-container {
+            width: 90%;
+            max-width: 450px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rating-container h2 {
+            color: #2980b9;
+            margin-bottom: -8px;
+            font-size: 24px;
+            font-weight: 600;
+            position: relative;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .rating {
+            display: inline-block;
+            direction: rtl;
+            margin: 20px 0;
+            position: relative;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label:before {
+            content: "★";
+            color: #d3d3d3;
+            font-size: 40px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .rating label:hover:before,
+        .rating label:hover ~ label:before,
+        .rating input:checked ~ label:before {
+            color: #f77e21;
+        }
+
+        .line p {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 10px;
+            position: relative;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #f9f9f9;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            animation: fadeInUp 2s ease forwards;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #2980b9;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            border: none;
+            padding: 12px 40px;
+            background-color: #2980b9;
+            border-radius: 50px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+            position: relative;
+            animation: fadeInUp 2.5s ease forwards;
+        }
+
+        button:hover {
+            background-color: #f77e21;
+            transform: translateY(-3px);
+        }
+        .footer {
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 25px 20px 0;
+            font-size: 13px;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+            color: #8094ae;
+            animation: fadeInUp 2.5s ease forwards;
+        }
+
+        .footer a {
+            color: #2980b9;
+            animation: fadeInUp 3s ease forwards;
+        }
+
+        .footer .email {
+            font-size: 12px;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .rating-container {
+                width: 100%;
+            }
+
+            .rating label:before {
+                font-size: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rating-container {
+                padding: 20px;
+            }
+
+            .rating label:before {
+                font-size: 30px;
+            }
+
+            input,
+            textarea {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rating-container">
+        <h2>Company's Nameh2>
+        <div class="rating">
+            <input type="radio" id="star1" name="stars_rating" value="1"><label for="star1"></label>
+            <input type="radio" name="stars_rating" id="star2" value="2"><label for="star2"></label>
+            <input type="radio" id="star3" name="stars_rating" value="3"><label for="star3"></label>
+            <input type="radio" id="star4" name="stars_rating" value="4"><label for="star4"></label>
+            <input type="radio" name="stars_rating" value="5" id="star5"><label for="star5"></label>
+        </div>
+        <div class="line">
+            <p>Tell Us Your Experience</p>
+        </div>
+        <form action="submited.html">
+            <input type="text" placeholder="Enter Your Name">
+            <input type="number" placeholder="Enter Your Phone Number" max="10">
+            <textarea name="review" id="review" placeholder="Enter Your Review"></textarea>
+            <button>Submit</button>
+        </form>
+        <div class="footer">
+            <p>Copyright © 2024 All rights reserved.</p>
+            <p class="email">Made with ❤ By <a href="https://github.com/satnam6g">Satnam</a></p>
+        </div>
+    </div>
+    
+
+    <script>
+        const googleReviewLink = " ";//paste your business's google star rating page link
+
+        function handleRatingChange() {
+            const rating = document.querySelector('input[name="stars_rating"]:checked');
+            if (rating && rating.value == '1') {
+                window.location.href = googleReviewLink;
+            }
+        }
+
+        document.querySelectorAll('input[name="stars_rating"]').forEach(input => {
+            input.addEventListener('change', handleRatingChange);
+        });
+    </script>
+</body>
+
+</html>
