@@ -11,10 +11,12 @@ Stronger Online Reputation: This approach helps maintain a high Google rating by
 DEMO: https://reviewdts.blogspot.com
 
 Main page
-![image](https://github.com/user-attachments/assets/bd81790e-763b-4756-9eca-324b6f9e473d)
+![image](https://github.com/user-attachments/assets/99f5ec96-6cdf-4007-ba2d-a1aa69d92291)
+
 
 Ratings
-![image](https://github.com/user-attachments/assets/917a9a6b-ccbf-4196-b691-bf8cabe6f4d9)
+![image](https://github.com/user-attachments/assets/ca832ed5-9b13-4297-93e8-be84e2c52b05)
+
 
 If the user gives rating less than or equal to 4
 ![image](https://github.com/user-attachments/assets/b89e326e-4592-40ae-830e-a4c997adcbc5)
